@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Contact</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}" rel="stylesheet">
+</head>
+<body>
+    <h1 class="text-center">Edit Information</h1>
+    <p class="lead">Please update the contact information below. </p>make it like 4 lines of text, and make it more descriptive 
+    <form method="post">
+        {% csrf_token %}
+        <div class="row gy-4">
+
+        <div class="col-md-6">
+            <label for="name-field" class="pb-2">Your Name</label>
+            <input type="text" name="name" id="name-field" class="form-control" required="">
+        </div>
+
+        <div class="col-md-6">
+            <label for="email-field" class="pb-2">Your Email</label>
+            <input type="email" class="form-control" name="email" id="email-field" required="">
+        </div>
+
+        <div class="col-md-12">
+            <label for="subject-field" class="pb-2">Subject</label>
+            <input type="text" class="form-control" name="subject" id="subject-field" required="">
+        </div>
+
+        <div class="col-md-12">
+            <label for="message-field" class="pb-2">Message</label>
+            <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+
+            <button type="submit" class="btn btn-success">Update</button>
+        </div>
+
+        </div>
+    </form>
+    
+</body>
+</html>

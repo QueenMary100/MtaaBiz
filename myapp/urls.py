@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 
-from myapp.views import blog, details, error, details, index, portfolio, services, starter, services, portfolio
+# from myapp.views import blog, details, error, details, index, portfolio, services, starter, services, portfolio, show, delete,edit
+from myapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,4 +13,9 @@ urlpatterns = [
     path('services/', services, name='services'),
     path('portfolio/', portfolio, name='portfolio'),
     path('starter/', starter, name='starter'),
+    path('show/', show, name= 'show'),
+
+    #make url for delete function, no need for name attribute since its not an html page or attribute
+    path('delete/<int:id>', delete),
+    path('edit/<int:id>/', edit),
 ]
